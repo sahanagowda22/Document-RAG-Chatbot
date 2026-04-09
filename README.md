@@ -5,12 +5,14 @@ Step-by-Step Procedure for Working of the program
 uploaded_file = st.file_uploader(...)
 
 👉 User uploads a PDF or text file
+
 👉 Streamlit handles the UI
 
 2. Read Document
 text = read_file(file_path, uploaded_file.name)
 
 👉 If PDF → uses PdfReader
+
 👉 If TXT → reads normally
 
 # Converts document → plain text
@@ -35,6 +37,7 @@ index = faiss.IndexFlatL2(...)
 index.add(embeddings)
 
 👉 Stores all vectors
+
 👉 Enables fast similarity search
 
 6. User Question
@@ -58,6 +61,7 @@ distances, indices = index.search(query_vec, k=3)
 context = " ".join([chunks[i] for i in indices[0]])
 
 👉 Combines relevant chunks
+
 👉 Shows them as answer
 
 💡 This is:
